@@ -27,7 +27,7 @@ public class Pratice {
         apples.sort(new Comparator<Apple>() {
             @Override
             public int compare(Apple o1, Apple o2) {
-                return o1.getWeight() - (o2.getWeight());
+                return o1.getWeight2().compareTo(o2.getWeight2());
             }
         });
 

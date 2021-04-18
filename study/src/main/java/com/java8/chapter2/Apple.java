@@ -3,6 +3,15 @@ package com.java8.chapter2;
 public class Apple {
     String color;
     int weight;
+    Integer weight2;
+
+    public Integer getWeight2() {
+        return weight2;
+    }
+
+    public void setWeight2(Integer weight2) {
+        this.weight2 = weight2;
+    }
 
     public Apple(String color, int weight) {
         this.color = color;
