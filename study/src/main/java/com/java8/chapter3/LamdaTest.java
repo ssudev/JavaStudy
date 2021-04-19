@@ -1,5 +1,8 @@
 package com.java8.chapter3;
 
+import com.java8.chapter2.Apple;
+import com.java8.chapter2.Predicate;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,8 +10,10 @@ import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.ToIntFunction;
 
 public class LamdaTest {
     public static void main(String[] args) throws IOException {
@@ -27,6 +32,32 @@ public class LamdaTest {
         List<Integer> i = map(
           Arrays.asList("lambdas", "in", "action"), (String s) -> s.length()
         );
+
+        List<String> str = Arrays.asList("a","b","c","d");
+        str.sort((s1,s2) -> s1.compareToIgnoreCase(s2));
+
+        str.sort(String::compareToIgnoreCase);
+
+        ToIntFunction<String> stringToIntFunction = (String s) -> Integer.parseInt(s);
+        stringToIntFunction = Integer::parseInt;
+
+        BiPredicate<List<String> ,String> containes = (list, element) -> list.contains(element);
+        containes = List::contains;
+
+//        Predicate<String> startsWithNumber = (String string) -> this.s;
+
+
+        List<Integer> weights = Arrays.asList(7,3,4,10);
+        List<Apple> apples = map2(weights, Apple::new);
+    }
+
+    public static List<Apple> map2(List<Integer> list, Function<Integer, Apple> f){
+        List<Apple> result = new ArrayList<>();
+        for(Integer i :list){
+            result.add(f.apply(i));
+        }
+
+        return result;
     }
 
     public static void process(Runnable r){

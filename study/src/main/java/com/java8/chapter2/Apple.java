@@ -13,6 +13,10 @@ public class Apple {
         this.weight2 = weight2;
     }
 
+    public Apple(int weight) {
+        this.weight = weight;
+    }
+
     public Apple(String color, int weight) {
         this.color = color;
         this.weight = weight;

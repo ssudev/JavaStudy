@@ -27,7 +27,7 @@
 - 함수형 인터페이스는 오직 하나의 추상 메서드만 지정한다.
   - public interface Predicate<T> { boolean test (T t); }
   - Comparator, Runnable, ActionListener, Callable, PrivilegedAction
-- 람다 표현식으로 함수형 인터페이스의 추상 메서드 구현을 직접 전달할 수 있으므로 전체 표현식을 함수형 인터페이스의 인스턴스로 취급할수 있따.
+- 람다 표현식으로 함수형 인터페이스의 추상 메서드 구현을 직접 전달할 수 있으므로 전체 표현식을 함수형 인터페이스의 인스턴스로 취급할수 있다.
 - 람다 표현식의 시그니처를 서술하는 메서드를 함수 디스크립터라고 부른다.
 - @FunctionalInterface : 함수형 인터페이스에 추가할 수 있는 어노테이션
 
@@ -51,8 +51,47 @@
   - 박싱 : 기본형을 참조형으로 변환하는 기능
   - 언박싱 : 참조형을 기본형으로 변환하는 기능
 
+### 3.5 형식 검사, 형식 추론, 제약
+- 람다가 사용되는 콘텍스트를 이용해서 람다의 형식을 추론할 수 있다.
+- 어떤 콘텍스트에서 기대되는 람다 표현식의 형식을 대상 형식이라고 부른다.
+- List<Apple> heavierThan150 = filter(inventory, (Apple apple) -> apple.getWeight() > 150);
+  1. filter 메서드의 선언을 확인한다.
+  2. filter 메서드는 두 번째 파라미터로 Predicate<Apple> 형식(대상 형식)을 기대한다.
+  3. Predicate<Apple>은 test라는 한 개의 추상 메서드를 정의하는 함수형 인터페이스다.
+  4. test 메서드는 Apple을 받아 boolean을 반환하는 함수 디스크립터를 묘사한다.
+  5. filter 메서드로 전달된 인수는 이와 같은 요구사항을 만족해야 한다.
+- 대상 형식이라는 특징 때문에 같은 람다 표현식이라도 호환되는 추상 메서드를 가진 다른 함수형 인터페이스로 사용될 수 있다.
+
+### 3.6 메서드 참조
+- 메서드 참조를 이용하면 기존의 메서드 정의를 재활용해서 람다처럼 전달할 수 있다.
+- invetory.sort((Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight()));
+- invetory.sort(comparing(Apple::getWeight))
+- 메서드 참조는 특정 메서드만을 호출하는 람다의 축약형이라고 생각할 수 있다.
+- 메서드 참조는 3가지 유형으로 구분될 수 있다.
+  1. 정적 메서드 참조 : Integer의 parseInt 메서드는 Integer::parseInt로 표현
+  2. 다양한 형식의 인스턴스 메서드 참조 : String의 length 메서드는 String::length로 표현
+  3. 기존 객체의 인스턴스 메서드 참조 : Transaction 객체를 할당받는 expensive 지역변수가 있으면, expensive::getValue로 표현
+- Class:new 처럼 클래스명과 new 키워드를 이용해서 기존 생성자의 참조를 만들 수 있다.
+  - Supplier<Apple> c1 = () -> new Apple(); Apple a1 = c1.get();
+  - Supplier<Apple> c1 = Apple::new; Apple a1 = c1.get();
+
+### 3.7 람다, 메서드 참조 활용하기
+
+### 3.8 람다 표현식을 조합할 수 있는 유용한 메서드
+- 함수를 여러개를 조합할 수 있다.
+- Comparator 조합
+  1. 역정렬 : inventory.sort(comparing(Apple::getWeight).reversed());
+  2. Comperator 연결 : inventory.sort(comparing(Apple::getWeight).reversed().thenComparing(Apple::getCountry));
+- Predicate 조합 : .and.or 사용
+- Fucntion 조합 : .andThen.compose 사용
+
 ### 마치며
-- 동작 파라미터화에서는 메서드 내부적으로 다양한 동작을 수행할 수 있도록 코드를 메서드 인수로 전달한다.
-- 동작 파라미터화를 이용하면 변화하는 요구사항에 더 잘 대응할 수 있는 코드를 구현할 수 있으며 나중에 엔지니어링 비용을 줄일 수 있다.
-- 자바 8에서는 인터페이스를 상속받아 여러 클래스를 구현해야 하는 수고를 없앨 수 있는 방법을 제공한다.
-- 자바 API의 많은 메서드는 정렬, 스레드, GUI 처리 등을 포함한 다양한 동작으로 파라미터화할 수 있다.
+- 람다 표현식은 익명 함수의 일종이다. 이름은 없지만, 파라미터 리시트 바디 반환 형식을 가지며 예외를 던질 수 있다.
+- 람다 표현식으로 간결한 코드를 구현할 수 있다.
+- 함수형 인터페이스는 하나의 추상 메서드만을 정의하는 인터페이스다.
+- 함수형 인터페이스를 기대하는 곳에서만 람다 표현식을 사용할 수 있다.
+- 람다 표현식을 이용해서 함수형 인터페이스의 추상 메서드를 즉석으로 제공할 수 있으며, 람다 표현식 전체가 함수형 인터페이스의 인스턴스로 취급된다.
+- 실행 어라운드 패턴을 람다와 활용하면 유연성과 재사용성을 추가로 얻을 수 있다.
+- 람다 표현식의 기대 형식을 대상 형식이라고 한다.
+- 메서드 참조를 이용하면 기존의 메서드 구현을 재사용하고 직접 전달할 수 있다.
+- Comparator, Predicate, Function 같은 함수형 인터페이스는 람다 표현식을 조합할 수 있는 다양한 디폴트 메서드를 제공한다.

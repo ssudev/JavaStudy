@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22d49d2b-60b3-4cd0-8164-fe3b6abf1e4a" name="Default Changelist" comment="패키지 변경">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/Apple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/AppleGreenColorPredicate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/AppleHeavyWeightPredicate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/ApplePredicate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/Pratice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/Predicate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/README.MD" afterDir="false" />
+    <list default="true" id="22d49d2b-60b3-4cd0-8164-fe3b6abf1e4a" name="Default Changelist" comment="CH3 람다식 커밋">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter2/Apple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java8/chapter3/LamdaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter3/LamdaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java8/chapter3/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java8/chapter3/README.MD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,14 +24,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
         <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="11" />
+        <option name="vmOptionsForImporter" value="-Xmx1024m" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1r9yTEutkpliyrBZ4Rjt8kY0w9S" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -49,17 +52,32 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/java8/chapter2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/java8/chapter3" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\devTool\intellj-workspace\core\JavaStudy\study\src\main\java\com\java8\chapter3" />
       <recent name="C:\devTool\intellj-workspace\core\JavaStudy\study\src\main\java\com\java8\chapter2" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.java8.chapter2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Pratice">
+  <component name="RunManager" selected="Application.LamdaTest">
+    <configuration name="LamdaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.java8.chapter3.LamdaTest" />
+      <module name="study.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.java8.chapter3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Pratice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.java8.chapter2.Pratice" />
       <module name="study.main" />
@@ -101,6 +119,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LamdaTest" />
         <item itemvalue="Application.Pratice" />
         <item itemvalue="Application.StudyApplication (1)" />
         <item itemvalue="Application.StudyApplication" />
@@ -130,7 +149,28 @@
       <option name="project" value="LOCAL" />
       <updated>1618403297489</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="CH2 동작 파라미터화 커밋">
+      <created>1618408945376</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618408945376</updated>
+    </task>
+    <task id="LOCAL-00004" summary="CH2 동작 파라미터화 커밋">
+      <created>1618749913568</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618749913568</updated>
+    </task>
+    <task id="LOCAL-00005" summary="CH3 람다식 커밋">
+      <created>1618755008154</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618755008154</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,10 +183,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="java8 commit" />
     <MESSAGE value="패키지 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="패키지 변경" />
+    <MESSAGE value="CH2 동작 파라미터화 커밋" />
+    <MESSAGE value="CH3 람다식 커밋" />
+    <option name="LAST_COMMIT_MESSAGE" value="CH3 람다식 커밋" />
   </component>
 </project>
