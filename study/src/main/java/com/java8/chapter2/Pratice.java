@@ -109,4 +109,14 @@ public class Pratice {
 
         return result;
     }
+
+    public static List<Apple> sortApples(List<Apple> inventory, Comparator<Apple> p){
+        List<Apple> result = new ArrayList<>();
+        for (Apple apple : inventory){
+//            if(p.compare(p,apple))
+                result.add(apple);
+        }
+
+        return result;
+    }
 }
